@@ -15,7 +15,7 @@ class Arm : public QObject
 public:
   Arm(MyGraphicsScene& s, uint nOfLines);
   void rotateEndEffector(uint index, radian angle);
-  void ccd(double x, double y);
+  uint ccd(double x, double y);
 
 public slots:
   void onMouseEvent(double x, double y);
