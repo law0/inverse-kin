@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
 
   MyGraphicsScene scene;
   scene.setSceneRect(0, 0, 800, 600);
+  a.installEventFilter(&scene);
 
   Arm arm(scene, 3);
 

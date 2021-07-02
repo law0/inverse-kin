@@ -8,6 +8,7 @@ class ArmSegment
 public:
   explicit ArmSegment(double x1, double y1, double x2, double y2);
   explicit ArmSegment(const ArmPoint& begin = ArmPoint(), const ArmPoint& end = ArmPoint());
+  ArmSegment(const ArmSegment&) = default;
   ArmSegment& operator=(const ArmSegment& other);
   ~ArmSegment();
 

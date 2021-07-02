@@ -5,12 +5,14 @@
 
 //#define ARM_DBUG
 
+const int32_t SEGMENT_LEN = 150;
+
 Arm::Arm(MyGraphicsScene& s, uint nOfLines) : scene(s), nlines(nOfLines), lines()
 {
   for(uint i = 0; i < nlines; ++i)
   {
-    lines.append(scene.addLine(QLineF(100 * i, 100 * i, 100 *(i+1), 100 * (i+1))));
-    segments.append(ArmSegment(ArmPoint(100 * i, 100 * i), ArmPoint(100 * (i + 1), 100 * (i + 1))));
+    lines.append(scene.addLine(QLineF(SEGMENT_LEN * i, SEGMENT_LEN * i, SEGMENT_LEN *(i+1), SEGMENT_LEN * (i+1))));
+    segments.append(ArmSegment(ArmPoint(SEGMENT_LEN * i, SEGMENT_LEN * i), ArmPoint(SEGMENT_LEN * (i + 1), SEGMENT_LEN * (i + 1))));
     textItem = scene.addText("(0, 0)");
   }
   connect(&scene, &MyGraphicsScene::mouseMoved, this, &Arm::onMouseEvent);
